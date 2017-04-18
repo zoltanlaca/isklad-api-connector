@@ -1,7 +1,7 @@
 <?php
 /**
 * @package IskladRestApi
-* @author Zoltán Laca <zoltan.laca@fortuity.sk>
+* @author Zoltán Laca
 * @version v1
 */
 

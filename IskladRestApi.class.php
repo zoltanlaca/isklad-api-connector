@@ -1,8 +1,28 @@
 <?php
 /**
-* @package IskladRestApi
-* @author Zoltán Laca
+* RestAPI pre Isklad
+* @author Zoltán Laca, Jr.
 * @version v1
+
+* With this class we have just 3 steps to send data to Isklad:
+* 1. Include this class to your php script
+*     include('IskladRestApi.class.php');
+* 2. Initialize it / test connection
+*     IskladRestApi::Initialize(AUTH_ID, AUTH_KEY, AUTH_TOKEN);
+*     (under development we can test the connection with  IskladRestApi::ConnectionTest(); )
+* 3. If ConnectionTest is OK, we call the method, we want, e.g. CreateNewOrder()
+*     IskladRestApi::CreateNewOrder($params);
+* 
+* Be sure to use ConnectionTest only under development, do not call it before each request!
+* 
+* $params is an array, which must be prepared for each method in structure described in the PDF API Manual.
+* e.g.This params is data from the real order from Prestashop (name, adress, contact, items...)
+* 
+* We can get last request, or last response, just call:
+* IskladRestApi::GetRequest();
+* IskladRestApi::GetResponse();
+* 
+* Thats all :)
 */
 
 class IskladRestApi
@@ -95,7 +115,7 @@ class IskladRestApi
         	'iskladAuthStatus'	=> isset($iskladErrorCodes->auth_status) ? self::DecodeErrorCode($iskladErrorCodes->auth_status) : self::DecodeErrorCode(0),
          	'iskladRespCode' 	=> isset($iskladErrorCodes->response->resp_code) ? self::DecodeErrorCode($iskladErrorCodes->response->resp_code) : self::DecodeErrorCode(0),
          	'response' 			=> $result, 
-         	'decodedResponse' 	=> json_decode($result),
+         	'decodedResponse' 	=> json_decode($result, true),
          	'responseHeaders' 	=> $header
          );
         
@@ -167,6 +187,24 @@ class IskladRestApi
 	static function StornoOrder($data)
 	{
 		self::$response = self::CreateRequest('StornoOrder', $data);
+	}
+
+	/**
+	* Trackovanie zásielky alebo objednávky
+	* @param 	dáta k metóde požadované servrom
+	*/
+	static function TrackPackage($data)
+	{
+		self::$response = self::CreateRequest('TrackPackage', $data);
+	}
+
+	/**
+	* Vloženie objednávky na zásielku
+	* @param 	dáta k metóde požadované servrom
+	*/
+	static function CreatePackage($data)
+	{
+		self::$response = self::CreateRequest('CreatePackage', $data);
 	}
 
 	

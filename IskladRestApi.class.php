@@ -206,6 +206,15 @@ class IskladRestApi
 	{
 		self::$response = self::CreateRequest('CreatePackage', $data);
 	}
+	
+	/**
+        * Zistenie stavu objednávky
+        * @param 	dáta k metóde požadované servrom
+        */
+         static function GetOrderStatus($data)
+         {
+             self::$response = self::CreateRequest('GetOrderStatus', $data);
+         }
 
 	
 }

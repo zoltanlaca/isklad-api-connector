@@ -1,0 +1,27 @@
+{
+  "name": "zoltanlaca/isklad-api-connector",
+  "description": "Lightweight connector to isklad.eu rest API",
+  "keywords": [
+    "zoltanlaca",
+    "isklad-api-connector"
+  ],
+  "homepage": "https://github.com/zoltanlaca/isklad-api-connector",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Zoltan Laca",
+      "email": "zoltan.laca@fortuity.sk"
+    }
+  ],
+  "require": {
+    "php": "^7.4",
+    "ext-curl": "*",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "ZoltanLaca\\IskladApiConnector\\": "src"
+    }
+  }
+}

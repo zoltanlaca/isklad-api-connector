@@ -21,13 +21,14 @@ class Connector
      * @param int $authId
      * @param string $authKey
      * @param string $authToken
+     * @param string|null $apiUrl
      */
-    public function __construct(int $authId, string $authKey, string $authToken, ?string $apiUrl = 'https://api.isklad-egon.sk/rest/v1')
+    public function __construct(int $authId, string $authKey, string $authToken, ?string $apiUrl = null)
     {
         $this->authId = $authId;
         $this->authKey = $authKey;
         $this->authToken = $authToken;
-        $this->apiUrl = $apiUrl;
+        $this->apiUrl = $apiUrl ?? 'https://api.isklad-egon.sk/rest/v1';
     }
 
     /**

@@ -10,7 +10,7 @@ class Connector
 {
     private string $apiUrl;
 
-    private int $authId;
+    private string $authId;
     private string $authKey;
     private string $authToken;
 
@@ -23,7 +23,7 @@ class Connector
      * @param string $authToken
      * @param string|null $apiUrl
      */
-    public function __construct(int $authId, string $authKey, string $authToken, ?string $apiUrl = null)
+    public function __construct(string $authId, string $authKey, string $authToken, ?string $apiUrl = null)
     {
         $this->authId = $authId;
         $this->authKey = $authKey;

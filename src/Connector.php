@@ -8,7 +8,7 @@ namespace ZoltanLaca\IskladApiConnector;
  */
 class Connector
 {
-    private const API_URL = 'https://api.isklad-egon.sk/rest/v1';
+    private string $apiUrl;
 
     private int $authId;
     private string $authKey;
@@ -22,11 +22,12 @@ class Connector
      * @param string $authKey
      * @param string $authToken
      */
-    public function __construct(int $authId, string $authKey, string $authToken)
+    public function __construct(int $authId, string $authKey, string $authToken, ?string $apiUrl = 'https://api.isklad-egon.sk/rest/v1')
     {
         $this->authId = $authId;
         $this->authKey = $authKey;
         $this->authToken = $authToken;
+        $this->apiUrl = $apiUrl;
     }
 
     /**
@@ -93,7 +94,7 @@ class Connector
         $curl = curl_init();
 
         curl_setopt_array($curl, [
-            CURLOPT_URL => self::API_URL,
+            CURLOPT_URL => $this->apiUrl,
             CURLOPT_POST => true,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_POSTFIELDS => json_encode($this->request),

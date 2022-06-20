@@ -1,6 +1,8 @@
 # iSklad API Connector #
 
-The iSklad API Connector library enables you to communicate with iSklad API.
+The iSklad API Connector library enables you to communicate with iSklad API. 
+
+API documentation: [isklad/egon-api-documentation](https://github.com/isklad/egon-api-documentation)
 
 ## Requirements ##
 * [PHP 7.4 or higher](https://www.php.net/)

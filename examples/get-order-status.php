@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 // import classes
 use ZoltanLaca\IskladApiConnector\Connector;
 use ZoltanLaca\IskladApiConnector\ConnectorException;
@@ -7,7 +9,7 @@ use ZoltanLaca\IskladApiConnector\ConnectorException;
 include_once dirname(__DIR__) . '/vendor/autoload.php';
 
 // create connector instance
-$connector = New Connector(123456, 'xxx', 'xxx');
+$connector = New Connector('123456', 'xxx', 'xxx');
 
 try {
     $response = $connector
@@ -16,7 +18,7 @@ try {
             'original_order_id' => 123,
         ])
         // send to api
-        ->send() // SSL is not verified in development @localhost
+        ->send()
         // get parsed response from connector
         ->getResponseHeaders();
 

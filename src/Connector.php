@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace ZoltanLaca\IskladApiConnector;
 
@@ -18,7 +19,7 @@ class Connector
     private array $response;
 
     /**
-     * @param int $authId
+     * @param string $authId
      * @param string $authKey
      * @param string $authToken
      * @param string|null $apiUrl

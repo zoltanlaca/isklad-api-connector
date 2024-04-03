@@ -18,7 +18,7 @@ try {
             'original_order_id' => 123,
         ])
         // send to api
-        ->send() // SSL is not verified in development @localhost
+        ->send()
         // get parsed response from connector
         ->getResponseHeaders();
 

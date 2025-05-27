@@ -1,6 +1,6 @@
 {
   "name": "zoltanlaca/isklad-api-connector",
-  "description": "Lightweight connector to isklad.eu rest API",
+  "description": "Lightweight connector to isklad.com rest API",
   "keywords": [
     "zoltanlaca",
     "isklad-api-connector"

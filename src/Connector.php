@@ -29,7 +29,7 @@ class Connector
         $this->authId = $authId;
         $this->authKey = $authKey;
         $this->authToken = $authToken;
-        $this->apiUrl = $apiUrl ?? 'https://api.isklad.eu/rest/v1';
+        $this->apiUrl = $apiUrl ?? 'https://api.isklad.com/rest/v1';
     }
 
     /**
